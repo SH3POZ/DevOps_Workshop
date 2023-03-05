@@ -1,27 +1,28 @@
-Hands-on Docker-02 : Run Docker Container-Multi-Stage (Dev,Prod) by Docker_compose
+# Hands-on Docker-02 : Run Docker Container-Multi-Stage (Dev,Prod) by Docker_compose
 Purpose of the this hands-on training is to teach the students how to Run Docker Container-Multi-Stage (Dev,Prod) by Docker_compose.
 
-Learning Outcomes
+## Learning Outcomes
+
 At the end of the this hands-on training, students will be able to;
 
-configure Docker_compose File (Dev,Prod)
+- Configure Docker_compose File (Dev,Prod)
 
-Run Docker Container-Multi-Stage (Dev,Prod)
+- Run Docker Container-Multi-Stage (Dev,Prod)
 
-configure Enviroment Variables
+- Configure Environment  Variables
 
-Outline
-Part 1 - Create & Configure 3 Docker Compose File (Dev,Prod,main)
+# Outline
+- Part 1 - Create & Configure 3 Docker Compose File (Dev,Prod,main)
 
-Part 2 - configure Enviroment Variables
+- Part 2 - Configure Environment  Variables
 
-Part 3 - Run simple web app
+- Part 3 - Run simple web app
 
-Part 1 - Create docker-Compose.yml.
+# Part 1 - Create docker-Compose.yml.
 
-Connect to your visual-studio-code.
-1-create docker-Compose.yml  under node-app file 
-
+- Connect to your visual-studio-code.
+- create docker-Compose.yml  under node-app file 
+```bash
 version: "3"
 services:
   node-app:
@@ -31,11 +32,11 @@ services:
       - C:\Users\Hassan\Desktop\node-app\source:/app/source:ro
     ports:
       - "4000:4000"
-
-Part 2 - We will Create 3 Docker Compose File (Dev,Prod)
+```
+# Part 2 - We will Create 3 Docker Compose File (Dev,Prod)
 
 - Create  Docker_compmse.dev.yml
-
+```bash
 version: "3"
 services:
   node-app:
@@ -43,18 +44,18 @@ services:
       - C:\Users\Hassan\Desktop\node-app\source:/app/source:ro
     environment:
       - NODE_ENV=devlopment 
-
+```
                                                           
  - Create Docker_compmse.prod.yml
- 
+```bash 
 version: "3"
 services:
   node-app:
     environment:
       - NODE_ENV=prodaction
-      
+```      
  - Create Docker_compmse-.main.yml  
- 
+ ```bash
 version: "3"
 services:
   node-app:
@@ -64,11 +65,11 @@ services:
       - "4000:4000"
     env_file:
       - C:\Users\Hassan\Desktop\node-app\.env
+```      
       
-      
-  Part 2 - configure Enviroment Variables
+#  Part 2 - Configure Environment  Variables
   - open index .js 
-  
+  ```bash
   const express = require('express');
 
 //init app
@@ -78,8 +79,9 @@ const app = express ();
 app.get('/', (req, res) => res.send('<h1> Hi Sh3poz<h1>'));
 
 app.listen(PORT, () => console.log('Hi its working Fine on port: ${PORT}'));
-
+```
   
-  Part 3 - Run simple web app 
-  
+ # Part 3 - Run simple web app 
+ ```bash 
  run docker-compose -f docker-compose-main.yml -f docker-compose.dev.yml up -d
+```
