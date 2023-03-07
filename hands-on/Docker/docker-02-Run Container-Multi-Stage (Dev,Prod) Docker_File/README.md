@@ -88,8 +88,9 @@ CMD [ "npm","run", "start-dev" ]
  run docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build 
 
 ```
+- Pic 1
 
-Pic 1
+![Apache HTTP Server](./ALB.png)
 
 ```bash
  docker-compose -f docker-compose.yml -f docker-compose.prod.yml down
@@ -100,7 +101,7 @@ Pic 1
 ```bash
 run docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build 
 ```
-Pic 2
+- Pic 2
 
 
 
