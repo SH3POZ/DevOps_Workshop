@@ -17,8 +17,6 @@ At the end of the this hands-on training, students will be able to;
 - Part 2 - Create & Configure Docker File 
 
 - Part 3 - Configure Environment  Variables
-
-- Part 4 - Run simple web app
  
 
 # Part 1 - Configure Docker_compose Multi-Stage  (Dev,Prod)
@@ -89,8 +87,8 @@ CMD [ "npm","run", "start-dev" ]
 
 ```
 - Pic 1
+![Pic 1](https://user-images.githubusercontent.com/111190149/223495718-f5218c90-0f68-4b82-a666-16a4b56ca990.jpg)
 
-![Apache HTTP Server](./ALB.png)
 
 ```bash
  docker-compose -f docker-compose.yml -f docker-compose.prod.yml down
@@ -102,6 +100,7 @@ CMD [ "npm","run", "start-dev" ]
 run docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build 
 ```
 - Pic 2
+![Pic 2](https://user-images.githubusercontent.com/111190149/223495807-7a0339d3-cd44-4f67-bd69-3fc94cd8e48b.jpg)
 
 
 
@@ -168,22 +167,18 @@ services:
     command: npm run start-dev
 
 ```
-#  Part 3 - Configure Environment  Variables
-  - open index .js 
-  ```bash
-  const express = require('express');
+- Pic 1
+![Pic 1](https://user-images.githubusercontent.com/111190149/223495718-f5218c90-0f68-4b82-a666-16a4b56ca990.jpg)
 
-//init app
-const PORT = process.env.PORT || 4000;;
-const app = express (); 
 
-app.get('/', (req, res) => res.send('<h1> Hi Sh3poz<h1>'));
-
-app.listen(PORT, () => console.log('Hi its working Fine on port: ${PORT}'));
-```
-  
- # Part 4 - Run simple web app 
- ```bash 
- run docker-compose -f docker-compose-main.yml -f docker-compose.dev.yml up -d
+```bash
+ docker-compose -f docker-compose.yml -f docker-compose.prod.yml down
 ```
 
+
+
+```bash
+run docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build 
+```
+- Pic 2
+![Pic 2](https://user-images.githubusercontent.com/111190149/223495807-7a0339d3-cd44-4f67-bd69-3fc94cd8e48b.jpg)
