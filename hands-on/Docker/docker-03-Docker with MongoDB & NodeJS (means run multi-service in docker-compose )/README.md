@@ -8,20 +8,20 @@ At the end of the this hands-on training, students will be able to;
 
 - Configure Docker_compose File 
 
-- Configure MangoDB 
+- Configure MongoDB 
 
-- Configure index.js & connect with MangoDB
+- Configure index.js & connect with MongoDB
 
 # Outline
 - Part 1 - Create & Configure Docker Compose File 
 
-- Part 2 - Configure MangoDB 
+- Part 2 - Configure MongoDB 
 
-- Part 3 - Configure index.js & connect with MangoDB
+- Part 3 - Configure index.js & connect with MongoDB
 
 # Part 1 - Configure Docker_compose File
 
-- First open docker hub --> search mango DB --> under via docker stack deploy --> copy instructions -- > past to docker compose  
+- First open docker hub --> search mongo DB --> under via docker stack deploy --> copy instructions -- > past to docker compose  
 ```bash
 version: "3"
 services:
@@ -42,14 +42,14 @@ services:
 ```
 - Run npm i mongoose 
 
-# Part 2 - Configure MangoDB
+# Part 2 - Configure MongoDB
 
 ```bash
 - Run npm i mongoose  
 ```
                                                           
       
-#  Part 3 - Configure index.js & connect with MangoDB
+#  Part 3 - Configure index.js & connect with MongoDB
 
 - To connect mangodDB with Nodejs we will open chrome -->google--> install mongoose 
 
