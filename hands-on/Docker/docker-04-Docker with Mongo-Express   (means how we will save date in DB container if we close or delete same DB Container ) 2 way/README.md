@@ -26,7 +26,7 @@ At the end of the this hands-on training, students will be able to;
 #  First Way :-
 # Part 1 - Configure Docker_compose File
 
-- first open docker hub --> search mongo DB --> under via  docker-compose or docker stack deploy--> copy new service mongo-express  
+- open docker hub --> search mongo DB --> under via  docker-compose or docker stack deploy--> copy new service mongo-express  
 ```bash
 version: "3"
 services:
