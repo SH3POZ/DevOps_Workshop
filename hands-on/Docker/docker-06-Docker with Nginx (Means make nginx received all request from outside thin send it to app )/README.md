@@ -22,7 +22,7 @@ At the end of the this hands-on training, students will be able to;
 
 - Part 3 - Configure Docker_compose File with Nginx
 
-- Part 4 - Rusalt
+- Part 4 - Result
 
 # Part 1 - Configure Docker_compose File
 
@@ -80,7 +80,7 @@ volumes:
 ```bash
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d 
 ```
-- result to check 
+# Part 4 - Result to check 
 ![photo_5843653926967164160_w](https://user-images.githubusercontent.com/111190149/228301993-2d57e585-539d-4bd3-b0fc-635a28e773fb.jpg)
 ![photo_5843653926967164162_w](https://user-images.githubusercontent.com/111190149/228302012-959639c7-6c00-4035-a3f7-f4c08d2beb9c.jpg)
 
