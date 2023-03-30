@@ -2,6 +2,7 @@ version: "3"
 services:
   node-app:
     container_name: app-06
+    image: sh3poz/node-app01
     volumes:
       - C:\Users\Hassan\Desktop\node-app\source:/app/source:ro
     ports:
