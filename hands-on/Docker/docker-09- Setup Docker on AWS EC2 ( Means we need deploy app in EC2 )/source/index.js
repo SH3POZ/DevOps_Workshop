@@ -36,7 +36,7 @@ client
 
 app.get('/', (req, res) => { 
  redisClient.set('products', 'products...');
-    res.send('<h1> Hi Hassan<h1>');
+    res.send('<h1> Hi man im Hassan From AWS Using Docker Hup<h1>');
 });
 
 
