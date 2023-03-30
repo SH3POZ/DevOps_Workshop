@@ -7,8 +7,6 @@ services:
       - C:\Users\Hassan\Desktop\node-app\source:/app/source:ro
     ports:
       - "4000:4000"
-    env_file:
-      - C:\Users\Hassan\Desktop\node-app\.env
     depends_on:
       - postgres
   postgres:
