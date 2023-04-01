@@ -140,12 +140,7 @@ git init
 ```bash
 git push origin main
 ```
-```bash
-git clone https://github.com/SH3POZ/DevOps_Workshop.git
-```
-```bash
-cd DevOps_Workshop/hands-on/Docker/'docker-09- Setup Docker on AWS EC2 ( Means we need deploy app in EC2 )'
-```
+
 # Part 4 - Create image and Push in Docker Hup 
 - open docker hup and create Repo
 
@@ -186,6 +181,13 @@ services:
 -docker-compose -f docker-compose.yml -f docker-compose.Prod.yml push node-app
 ```
 - Go to EC2 Instance and run commend ..
+
+```bash
+git clone https://github.com/SH3POZ/DevOps_Workshop.git
+```
+```bash
+cd DevOps_Workshop/hands-on/Docker/'docker-09- Setup Docker on AWS EC2 ( Means we need deploy app in EC2 )'
+```
 
 ```bash
 docker-compose -f docker-compose.yml -f docker-compose.Prod.yml pull
