@@ -202,9 +202,16 @@ docker-compose -f docker-compose.yml -f docker-compose.Prod.yml up -d
 
 
 
+# Note
 
-
-
+- To push code from Vscode to Githup
+- 
+```bash
+git commit -m "first commit"
+git add . 
+git status
+git push -u origin main
+```
 
 
 
