@@ -1,6 +1,7 @@
 const express = require('express');
 const redis = require('redis');
 const { Client } = require('pg');
+const os = ('os');
 
 
 //init app
@@ -36,7 +37,8 @@ client
 
 app.get('/', (req, res) => { 
  redisClient.set('products', 'products...');
-    res.send('<h1> Hi Hassan You Are Using Docker Hup<h1>');
+console.log(`traffic from ${os.hostname}`);
+    res.send('<h1> Hi Hassan You Are Using nginx LB<h1>');
 });
 
 

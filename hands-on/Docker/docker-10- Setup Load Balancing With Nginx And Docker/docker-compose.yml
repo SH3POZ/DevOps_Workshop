@@ -1,12 +1,9 @@
 version: "3"
 services:
   node-app:
-    container_name: app-06
     image: sh3poz/node-app01
     env_file:
       - ./.env
-    ports:
-      - "4000:4000"
     depends_on:
       - postgres
   postgres:
@@ -31,9 +28,3 @@ services:
 volumes:
    mongo-db:
    postgres-dp:
-
-
-
-      
-
-
