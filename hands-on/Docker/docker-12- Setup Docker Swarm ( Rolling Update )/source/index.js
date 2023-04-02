@@ -36,7 +36,7 @@ client
 
 app.get('/', (req, res) => { 
  redisClient.set('products', 'products...');
-    res.send('<h1> Hi Hassan You Are Using Docker Swarm Rolling Updated<h1>');
+    res.send('<h1> Hi Hassan You Are Using Docker Swarm Rolling Updated 02<h1>');
 });
 
 
