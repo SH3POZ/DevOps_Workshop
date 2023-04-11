@@ -61,6 +61,12 @@ kubectl apply -f helloworld-pod.yml
 ```bash
 kubectl get pods
 ```
+
+![1](https://user-images.githubusercontent.com/111190149/231018477-9ef19b6c-f556-40d3-acd2-a9c8df32f013.jpg)
+
+![2](https://user-images.githubusercontent.com/111190149/231018489-3a3746aa-d766-453b-92e8-4a6f6b33e40e.jpg)
+
+
 - Describe the pods
 
 ```bash
@@ -83,6 +89,7 @@ echo "Hello Hassan From Pod in Kubernetes" > /usr/share/nginx/html/index.html
 ```bash
 curl http://localhost
 ```
+![3](https://user-images.githubusercontent.com/111190149/231018520-647d451c-2b08-485f-bb90-86a9ff31713b.jpg)
 
 
 
