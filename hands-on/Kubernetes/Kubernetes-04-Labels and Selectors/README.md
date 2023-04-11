@@ -85,6 +85,9 @@ kubectl get pods --selector owner=Hassan
 ```bash
 kubectl get pods -l owner=Hassan
 ```
+
+![1](https://user-images.githubusercontent.com/111190149/231119259-a4ab477c-a371-462d-96e7-3be277814edd.jpg)
+
 - But if i want except specific labels 
 
 ```bash
@@ -96,6 +99,7 @@ kubectl get pods -l owner!=Hassan
 ```bash
 kubectl get pods -l 'owner in (Hassan)'
 ```
+![1](https://user-images.githubusercontent.com/111190149/231119116-45a52bc8-cace-4bec-878c-57867321c2e8.jpg)
 
 - But if i want except specific labels 
 
