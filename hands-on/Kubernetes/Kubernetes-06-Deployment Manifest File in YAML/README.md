@@ -1,4 +1,4 @@
-# Hands-on Kubernetes-05 :Deployment Manifest File in YAML
+# Hands-on Kubernetes-06 :Deployment Manifest File in YAML
  
 
 Purpose of the this hands-on training is to teach the students how to Deployment Manifest File in YAML 
