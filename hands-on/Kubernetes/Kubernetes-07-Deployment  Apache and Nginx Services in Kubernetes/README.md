@@ -90,17 +90,29 @@ kubctle apply -f apache-deployment.yml
 ```bash
 kubectl expose deployment apache-deployment --name=apache-service --type=ClusterIP --port=8090 --target-port=8080
 ```
+![1](https://user-images.githubusercontent.com/111190149/233870211-8cd2af15-1229-4398-83d3-68cf60961082.jpg)
+
+
 - To check the service 
 
 ```bash
 kubectl get all
 ```
-- To accses app we must be do port forward 
+![2](https://user-images.githubusercontent.com/111190149/233870225-a92bb3e0-e510-4a1f-82b5-17bf439f5ef0.jpg)
+
+
+- To access the app we must do a port forward
 
 ```bash
 kubectl port-forward service/apache-service 8090:8080
 ```
-- Rusalt 
+![3](https://user-images.githubusercontent.com/111190149/233870238-2b76c21d-6bc2-4fc1-861b-8c2810414951.jpg)
+
+
+- Result 
+
+![4](https://user-images.githubusercontent.com/111190149/233870254-a069395c-9de2-4fad-a0d6-19d3b8022c35.jpg)
+
 
 - Run Nginx
 
@@ -109,11 +121,14 @@ kubectl apply -f nginx-deployment.yml
 ```
 - To check the deployment
 
+![5](https://user-images.githubusercontent.com/111190149/233870284-a6cef498-b67d-4c71-9316-e585dcf4f8c3.jpg)
+
+
 ```bash
 kubectl get deployment
 ```
 
-- To Accses the nginx servies  
+- To Access the nginx service  
 
 ```bash
 kubectl expose deployment nginx-deployment 
@@ -124,13 +139,16 @@ kubectl expose deployment nginx-deployment
 kubectl get service
 ```
 
+![6](https://user-images.githubusercontent.com/111190149/233870287-0dc0a6cb-7918-4a55-95d5-fde969453ab6.jpg)
+
+
 ```bash
 minikube service nginx-deployment 
 ```
 
 # Part 3 - Note 
 
-- Imperative ---->we will typing and create the commend onle to run the deployment 
+- Imperative ----> We will be typing and creating the command only to run the deployment
 EX..
 
 ```bash
@@ -142,7 +160,7 @@ kubectl scale deployment nginx-web --replicas=3
 ```
 
  
-- Declarative --> we will typing and create the config yml file by ourselves to run the deployment 
+- Declarative --> We will be typing and creating the config yml file by ourselves to run the deployment 
 
 EX..
 
