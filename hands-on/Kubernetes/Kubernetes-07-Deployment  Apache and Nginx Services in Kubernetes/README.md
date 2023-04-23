@@ -1,4 +1,4 @@
-# Hands-on Kubernetes-05 :Deployment Apache and Nginx Services in Kubernetes
+# Hands-on Kubernetes-07 :Deployment Apache and Nginx Services in Kubernetes
  
 
 Purpose of the this hands-on training is to teach the students how to Deployment Apache and Nginx Services in Kubernetes 
