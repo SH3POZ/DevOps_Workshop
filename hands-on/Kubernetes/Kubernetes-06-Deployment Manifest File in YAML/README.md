@@ -59,8 +59,12 @@ kubectl apply -f deployment-file.yml
 ```bash
 kubectl delete pods webserver-6cbf99fd-sqrwr
 ```
+![1](https://user-images.githubusercontent.com/111190149/233866228-e8f734bb-902e-4944-a0d6-6ecf807d9c1f.jpg)
+
+
 - Delete deployment 
 
 ```bash
 kubectl delete deployment webserver
 ```
+![2](https://user-images.githubusercontent.com/111190149/233866235-18b98fd9-bfe8-4192-b726-186a0f5f4f25.jpg)
