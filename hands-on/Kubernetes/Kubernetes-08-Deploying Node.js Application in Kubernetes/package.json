@@ -1,0 +1,15 @@
+{
+  "name": "kubernetes-08-deploying-node.js-application-in-kubernetes",
+  "version": "1.0.0",
+  "description": "Purpose of the this hands-on training is to teach the students how to Deployment Apache and Nginx Services in Kubernetes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
