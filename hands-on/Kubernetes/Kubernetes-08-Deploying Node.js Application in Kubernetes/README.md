@@ -7,13 +7,13 @@ Purpose of the this hands-on training is to teach the students how to Deploying 
 
 At the end of the this hands-on training, students will be able to;
 
--  Configure App.mjs
+-  Configure App.js
 
 -  Configure Docker File 
 
 -  Create Deployment
 
-- Note 
+-  Note 
 
 
 # Outline
@@ -23,10 +23,10 @@ At the end of the this hands-on training, students will be able to;
 
 - Part 3 -   Create Deployment
 
-- Part 4 - Note 
+- Part 4 -   Note 
 
 
-# Part 1 - Configure App.mjs
+# Part 1 - Configure App.js
 
 - Configure Node.js Application 
 
@@ -38,7 +38,7 @@ npm init -y
 ```bash
 npm install express
 ```
-- crate new file name index.mjs
+- Create new file name index.mjs
 
 ```bash
 import Express from 'express'
@@ -58,10 +58,21 @@ app.listen(PORT, ()=>{
     console.log(os.hostname())
 })
 ```
+- Run
+
+```bash
+npm start
+```
+![1](https://user-images.githubusercontent.com/111190149/233929874-d9d50cc4-84f0-4989-994d-b00ce41b8af0.jpg)
+![2](https://user-images.githubusercontent.com/111190149/233930045-94085d52-0328-4ce7-be14-5e56b90ee18e.jpg)
+
+
+
+
 
 # Part 2 - Configure Docker File
 
-- Cerate Docker file    
+- Create Docker file    
 
 ```bash
 FROM node:alpine
@@ -79,7 +90,7 @@ COPY . ./
 CMD [ "npm", "start" ]
 ```
 
-- Open package.json change 
+- Open package.json and change 
 
 ```bash
 "scripts": {
@@ -93,16 +104,17 @@ To
 ```bash
 npm start
 ```
-- Bulid docker image 
+- Bulid Docker image 
 
 ```bash
 docker build . -t sh3poz/k8s-web-server
 ```
-- push docker image to docker hub 
+- Push docker image to docker hub 
 
 ```bash
 docker push sh3poz/k8s-web-server
 ```
+![4](https://user-images.githubusercontent.com/111190149/233930215-114e1485-a322-4fe8-abc5-5da22ba08566.jpg)
 
 # Part 3 - Create Deployment 
 
@@ -111,24 +123,28 @@ docker push sh3poz/k8s-web-server
 ```bash
 kubctl create deployment k8s-web-server --image=sh3poz/k8s-web-server
 ```
-- exopse deployment 
+- Exopse deployment 
 
 ```bash
 kubectl expose deployment k8s-web-server --port=3000
 ```
+![6](https://user-images.githubusercontent.com/111190149/233930694-b4a7831b-4c3b-4cec-a900-21f2de9239d2.jpg)
 
  
-- scale 
+- Scale Up 
 
 ```bash
 kubectl scale deployment k8s-web-server --replicas=6
 ```
+![3](https://user-images.githubusercontent.com/111190149/233930294-f103012d-720a-4c08-854b-be2e0a5d7c5c.jpg)
 
--exsses te pods
+
+-Access the pods
 
 ```bash
 kubectl get pods -o wide
 ```
+![3](https://user-images.githubusercontent.com/111190149/233930533-3c32b215-6a8b-4d8e-8ee4-757a32869978.jpg)
 
 ```bash
 minikube ssh 
@@ -137,18 +153,24 @@ minikube ssh
 ```bash
 curl 10.244.0.42:3000
 ```
-- Deleate k8s-web-server service
+![5](https://user-images.githubusercontent.com/111190149/233930361-5bb1ead6-34c4-4cb9-9463-6e7564880091.jpg)
+
+
+- Delete k8s-web-server service
 
 ```bash
 kubectl delete service k8s-web-serve
 ```
 
--exopse deployment again
+-Exopse Deployment Again
 
 ```bash
 kubectl expose deployment k8s-web-server --type=NodePort --port=3000
 ```
--show the app 
+![7](https://user-images.githubusercontent.com/111190149/233930761-8f7f1540-c8c5-4aa7-bdad-365fc18cc806.jpg)
+
+
+-Show the app 
 
 ```bash
 minikube service k8s-web-server 
@@ -157,8 +179,9 @@ minikube service k8s-web-server
 # Part 4 - Note
 
 - Types of Services :-
-1- Culsetr IP --> the default value all pods they can request togezet intenal 
-2- node Port --> you can accessible each node in clusetr though static port from outside
-3- LoadBalancer --> you can accessible each node in clusetr though Cloud from outside
-4- ExternlName --> you can accessible each node in clusetr though Alias its lik DNS from outside
-5- Ingress --> its not service but it as entry point for the cluster you can accessible multiple services under the same IP address
+
+- Culsetr IP --> the default value all pods they can request togezet intenal 
+- Node Port --> you can accessible each node in clusetr though static port from outside
+- LoadBalancer --> you can accessible each node in clusetr though Cloud from outside
+- ExternlName --> you can accessible each node in clusetr though Alias its lik DNS from outside
+- Ingress --> its not service but it as entry point for the cluster you can accessible multiple services under the same IP address
