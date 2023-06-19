@@ -1,11 +1,11 @@
-# Hands-on Kubernetes-08 : Deploying Node.js Application in Kubernetes
+# Hands-on Kubernetes-08: Deploying Node.js Application in Kubernetes
  
 
-Purpose of the this hands-on training is to teach the students how to Deploying Node.js Application in Kubernetes 
+Purpose of the this hands-on training is to teach the students how to Deploying Node.js Applications in Kubernetes 
 
 ## Learning Outcomes
 
-At the end of the this hands-on training, students will be able to;
+At the end of this hands-on training, students will be able to;
 
 -  Configure App.js
 
@@ -38,7 +38,7 @@ npm init -y
 ```bash
 npm install express
 ```
-- Create new file name index.mjs
+- Create a new file name index.mjs
 
 ```bash
 import Express from 'express'
@@ -72,10 +72,10 @@ npm start
 
 # Part 2 - Configure Docker File
 
-- Create Docker file    
+- Create a Docker file    
 
 ```bash
-FROM node:alpine
+FROM node: alpine
 
 WORKDIR /app
 
@@ -85,7 +85,7 @@ COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY . ./
+COPY. ./
 
 CMD [ "npm", "start" ]
 ```
@@ -104,10 +104,10 @@ To
 ```bash
 npm start
 ```
-- Bulid Docker image 
+- Build a Docker image 
 
 ```bash
-docker build . -t sh3poz/k8s-web-server
+docker build. -t sh3poz/k8s-web-server
 ```
 - Push docker image to docker hub 
 
@@ -118,12 +118,12 @@ docker push sh3poz/k8s-web-server
 
 # Part 3 - Create Deployment 
 
-- Create web-server deployment
+- Create a web-server deployment
 
 ```bash
 kubctl create deployment k8s-web-server --image=sh3poz/k8s-web-server
 ```
-- Exopse deployment 
+- Expose deployment 
 
 ```bash
 kubectl expose deployment k8s-web-server --port=3000
@@ -156,13 +156,13 @@ curl 10.244.0.42:3000
 ![5](https://user-images.githubusercontent.com/111190149/233930361-5bb1ead6-34c4-4cb9-9463-6e7564880091.jpg)
 
 
-- Delete k8s-web-server service
+- Delete the k8s-web-server service
 
 ```bash
 kubectl delete service k8s-web-serve
 ```
 
--Exopse Deployment Again
+-Expose Deployment Again
 
 ```bash
 kubectl expose deployment k8s-web-server --type=NodePort --port=3000
@@ -178,10 +178,10 @@ minikube service k8s-web-server
 
 # Part 4 - Note
 
-- Types of Services :-
+- Types of Services:-
 
-- Culsetr IP --> the default value all pods they can request togezet intenal 
-- Node Port --> you can accessible each node in clusetr though static port from outside
-- LoadBalancer --> you can accessible each node in clusetr though Cloud from outside
-- ExternlName --> you can accessible each node in clusetr though Alias its lik DNS from outside
-- Ingress --> its not service but it as entry point for the cluster you can accessible multiple services under the same IP address
+- Cluster IP --> the default value for all pods they can request togezet internal 
+- Node Port --> You can access each node in the cluster through a static port from outside
+- LoadBalancer --> You can access each node in Cluster through the Cloud from outside
+- ExternlName --> You can access each node in the cluster through Alias its like DNS from outside
+- Ingress --> It's not a service but it is an entry point for the cluster you can access multiple services under the same IP address
