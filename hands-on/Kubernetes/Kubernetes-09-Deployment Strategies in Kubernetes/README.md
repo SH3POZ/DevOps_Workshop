@@ -136,6 +136,7 @@ minikube service k8s-web-server
 # Part 5 - Note
 
 - Types of deployment strategies:-
+
 1- Rolling Update Deployment --> Its default Deployment Strategy its update pods by podes or one by one without downtime... but the performance will be a reduction 
 2- Recreate Update Deployment --> its shutdown all old podes then replace the new pods then up again 
 3- Canary Update Deployment --> its crate only 25% new pods to test and kept the old pods, so few users working on the new pods and testing them and some users still working with the old pods, so if no bugs we can scale up but if we have bugs we can rollback  the old pods
