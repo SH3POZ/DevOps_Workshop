@@ -1,0 +1,15 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+ENV PORT=4000
+
+COPY . .
+
+EXPOSE ${PORT}
+
+CMD [ "npm","run", "start-dev" ]

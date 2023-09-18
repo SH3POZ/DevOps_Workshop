@@ -1,0 +1,16 @@
+version: "3"
+services:
+  node-app:
+    build: 
+      context: .
+      target: development
+    volumes:
+      - C:\Users\Hassan\Desktop\node-app\source:/app/source:ro
+    environment:
+      - NODE_ENV=development 
+    command: npm run start-dev
+
+
+      
+
+
