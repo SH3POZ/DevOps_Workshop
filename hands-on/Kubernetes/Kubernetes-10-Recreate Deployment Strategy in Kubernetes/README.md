@@ -115,15 +115,18 @@ kubectl get all
 
 ```bash
 kubectl apply -f service.yaml
-```
-![1](https://github.com/SH3POZ/DevOps_Workshop/assets/111190149/58bb2b14-898b-476f-8470-15d6072c9a30)
 
 ```
+
+![1](https://github.com/SH3POZ/DevOps_Workshop/assets/111190149/58bb2b14-898b-476f-8470-15d6072c9a30)
+
 -show the app link 
 
 ```bash
 minikube service recreate-service
+
 ```
+
 ![3](https://github.com/SH3POZ/DevOps_Workshop/assets/111190149/969212b3-cb69-490f-b747-d0f5a4704ecb)
 
 # Part 4 - Recreate Deployment Strategy V2
@@ -140,18 +143,22 @@ spec:
 
 ```bash
 kubectl apply -f deployment.yml
+
 ```
 -check
+
 ![4](https://github.com/SH3POZ/DevOps_Workshop/assets/111190149/8cf8080b-3a36-4155-ae7c-a3f371c7590f)
 
 ```bash
 kubectl get po
+
 ```
 
-- crate New Deployment 
+- create New Deployment 
 
 ```bash
 kubectl apply -f deployment.yml
+
 ```
 
 
@@ -162,5 +169,6 @@ kubectl apply -f deployment.yml
 
 ```bash
 minikube service recreate-service
+
 ```
 ![5](https://github.com/SH3POZ/DevOps_Workshop/assets/111190149/5c7e7767-2938-4db3-b06b-6b4b905eefcb)
