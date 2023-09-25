@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-containers-pods
+spec:
+  restartPolicy : Never
+  volumes : 
+    - name: shared-area
+      emptyDir: {}
+  containers:
+    - name: nginx-container
+      image: nginx
+      volumeMounts:
+      - name: shared-area
+        mountPath:  /usr/share/nginx/html
+    - name: ubuntu-container
+      image: ubuntu   
+      volumeMounts:
+      - name: shared-area
+        mountPath: /pod-area
+      command: ["/bin/sh"]
+      args: ["-c", "echo Hello From Multi-Container > /pod-area/index.html"]
